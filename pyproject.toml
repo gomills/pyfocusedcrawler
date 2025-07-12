@@ -1,0 +1,17 @@
+[project]
+name = "webcralwer"
+version = "0.1.0"
+description = "Modern python web crawler focused on web security. Asyncio + aiohttp as framework"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "aiohttp>=3.12.13",
+    "lxml>=6.0.0",
+    "pydantic>=2.11.7",
+    "pytest>=8.4.1",
+    "pytest-cov>=6.2.1",
+    "shortuuid>=1.0.13",
+    "tldextract>=5.3.0",
+    "tree-sitter>=0.24.0",
+    "tree-sitter-javascript>=0.23.1",
+]
