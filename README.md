@@ -43,7 +43,7 @@ crawl_config = CrawlerConfiguration(
 - **headers**: HTTP headers sent with each request
 - **sensitive_patterns**: these will bypass the path depth limit
 - **allowed_file_extensions**: File types to crawl (e.g., `"html"`, `"js"`)
-These have default set, but can be modified:
+- **These have default set, but can be modified:**
 - **max_workers**: Number of concurrent async workers
 - **max_time**: Maximum crawl duration (seconds)
 - **valid_external_domains**: External domains allowed for crawling
