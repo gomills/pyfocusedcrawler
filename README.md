@@ -55,8 +55,10 @@ These have default set, but can be modified:
 
 Specify your target domains in `main.py`:
 
-```python
 line 36: for domain in ("example1.com", "example2.com", "example3.com"):
+
+```python
+# line 36: for domain in ("example1.com", "example2.com", "example3.com"):
 ```
 
 Run the crawler:
@@ -78,6 +80,7 @@ Crawl results are saved in the `results/` directory as JSON files, one per domai
 ```
 ## Architecture Overview
 
+
 ```
 Domain Input → Initial URLs → Queue → Worker Pool → URL Validation → HTTP Request → Link Extraction → Queue
                                  ↓
@@ -89,6 +92,7 @@ Domain Input → Initial URLs → Queue → Worker Pool → URL Validation → H
 ### CrawlerConfiguration
 
 Pydantic model defining crawler parameters:
+
 
     headers: dict[str, str]                      # HTTP headers for requests
     sensitive_patterns: tuple[str, ...]          # URL patterns to prioritize even beyond max depth
@@ -137,22 +141,22 @@ Each worker performs the following operations:
 
 ```json
 {
-    "domain": "example.com",
-    "stop_reason": "Empty Queue",
-    "crawling_time": 45.2,
-    "number_of_urls": 120,
-    "urls": {
-        "successful_requests": {
-            "https://example.com/": [1, "Crawled", 200],
-            "https://example.com/about": [2, "Crawled", 200]
-        },
-        "unsuccessful_requests": {
-            "https://example.com/missing": [2, "Crawled", 404]
-        },
-        "not_requested": {
-            "https://example.com/too-deep": [11, "max_crawl_depth_reached", 900]
-        }
+  "domain": "example.com",
+  "stop_reason": "Empty Queue",
+  "crawling_time": 45.2,
+  "number_of_urls": 120,
+  "urls": {
+    "successful_requests": {
+      "https://example.com/": [1, "Crawled", 200],
+      "https://example.com/about": [2, "Crawled", 200]
+    },
+    "unsuccessful_requests": {
+      "https://example.com/missing": [2, "Crawled", 404]
+    },
+    "not_requested": {
+      "https://example.com/too-deep": [11, "max_crawl_depth_reached", 900]
     }
+  }
 }
 ```
 

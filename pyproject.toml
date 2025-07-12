@@ -1,5 +1,5 @@
 [project]
-name = "webcralwer"
+name = "pyfocusedcrawler"
 version = "0.1.0"
 description = "Modern python web crawler focused on web security. Asyncio + aiohttp as framework"
 readme = "README.md"
