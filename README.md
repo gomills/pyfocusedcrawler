@@ -1,6 +1,6 @@
 # Web Crawler
 
-A multi-threaded asynchronous web crawler built with Python that systematically crawls websites focused on useful URLs. Focused on security, aims to discover all URLs that characterize a website and its most direct vulnerabilities (important subpages and all scripts).
+A multi-threaded asynchronous web crawler built with Python that systematically crawls websites focused on useful URLs. Focused on security, aims to discover all URLs that characterize a website and its most direct vulnerabilities (important subpages and all scripts)...
 
 Stops at first 429 status code, time limit or empty Queue. Won't bypass antibot measures such as 
 captcha.
@@ -53,12 +53,11 @@ crawl_config = CrawlerConfiguration(
 
 ### 4. Start Crawling
 
+
 Specify your target domains in `main.py`:
 
-line 36: for domain in ("example1.com", "example2.com", "example3.com"):
-
 ```python
-# line 36: for domain in ("example1.com", "example2.com", "example3.com"):
+# for domain in ("example1.com", "example2.com", "example3.com"):
 ```
 
 Run the crawler:
@@ -76,18 +75,21 @@ Crawl results are saved in the `results/` directory as JSON files, one per domai
 
 ---
 
+
 **Tip:** Adjust configuration parameters to fit your target website and crawling goals.
-```
-## Architecture Overview
 
+---
 
-```
+## 🏗️ Architecture Overview
+
+```text
 Domain Input → Initial URLs → Queue → Worker Pool → URL Validation → HTTP Request → Link Extraction → Queue
                                  ↓
                             Stored URLs (Results)
 ```
 
-## 🔧 Core Components
+
+## �️ Core Components
 
 ### CrawlerConfiguration
 
@@ -113,7 +115,8 @@ Main crawler orchestrator managing:
 - **Queue management**: Async queue of `(url, depth, extension)` tuples
 - **Stop conditions**: Time limits, rate limiting (429), empty queue
 
-## 👷 Worker Behavior
+
+## 👷‍♂️ Worker Behavior
 
 Each worker performs the following operations:
 
@@ -137,7 +140,8 @@ Each worker performs the following operations:
 - **Flexible search strategies**: Supports both breadth-first and depth-first crawling
 
 
-## 📤 Output Format
+
+## � Output Format
 
 ```json
 {
@@ -165,7 +169,8 @@ Each worker performs the following operations:
 - `"Empty Queue"`: No more URLs to crawl
 - `"429 status code"`: Rate limiting detected (server returned a single HTTP 429, crawler stops at the first)
 
-## 🔍 URL Validation
+
+## � URL Validation
 
 The crawler validates URLs through multiple steps:
 
