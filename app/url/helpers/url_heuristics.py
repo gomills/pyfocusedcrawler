@@ -91,5 +91,5 @@ COMMON_JS_LIBRARY_FILE_REGEX = re.compile(
     re.IGNORECASE | re.VERBOSE,
 )
 
-absolute_url_pattern = re.compile(r'(?<![\w\/])https:\/\/[^\s"\'<>)]*', re.IGNORECASE)
+absolute_url_pattern = re.compile(r'(?<![\w\/])\/\/[^\s"\'<>)]*', re.IGNORECASE)
 
