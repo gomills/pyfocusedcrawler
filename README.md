@@ -1,6 +1,6 @@
 # PyFocusedCrawler
 
-**Deprecated. Please see gomills/gofocusedcrawler for the same version ready for production. This python version was just for learning the language.**
+**Deprecated. Please see gomills/gofocusedcrawler for the same version ready for production.**
 
 
 A multi-threaded asynchronous web crawler built with Python that systematically crawls websites focused on useful URLs. Focused on security, aims to discover all URLs that characterize a website and its most direct vulnerabilities (important subpages and all scripts)...
